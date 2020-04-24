@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './App.scss'
 import {connect} from 'react-redux';
+import { number } from 'prop-types';
 
 class App extends Component {
   state = {
@@ -22,6 +23,7 @@ class App extends Component {
 
         <div className="Actions">
           <button onClick={this.props.onAdd}>Добавить 1</button>
+          <button onClick={() => this.props.onAddNumber(15)}>Добавить 15</button>
           <button onClick={this.props.onSub}>Вычесть 1</button>
         </div>
       </div>
@@ -39,7 +41,8 @@ function mapDispatchToProps(dispatch){
 
   return {
     onAdd: () => dispatch({type: 'ADD'}),
-    onSub: ()=> dispatch({type:'SUB'})
+    onSub: ()=> dispatch({type:'SUB'}),
+    onAddNumber: number => dispatch({type: 'NUM', payload: number})
   }
 }
 

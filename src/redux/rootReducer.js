@@ -16,12 +16,12 @@ export default function rootReducer(state = initialState, action) {
 
     case "NUM":
       return {
-        counter: state.counter - 1,
+        counter: state.counter + action.payload,
       };
 
     default:
       return state;
   }
 
-  return state;
+
 }
