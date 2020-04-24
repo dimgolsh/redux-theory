@@ -2,18 +2,10 @@ import React, {Component} from 'react'
 import './App.scss'
 import {connect} from 'react-redux';
 import { number } from 'prop-types';
+import Counter from './Counter';
 
 class App extends Component {
-  state = {
-    counter: 0
-  }
-
-  updateCounter(value) {
-    this.setState({
-      counter: this.state.counter + value
-    })
-  }
-
+ 
   render() {
     return (
       <div className={'App'}>
@@ -26,14 +18,16 @@ class App extends Component {
           <button onClick={() => this.props.onAddNumber(15)}>Добавить 15</button>
           <button onClick={this.props.onSub}>Вычесть 1</button>
         </div>
+        <Counter/>
       </div>
     )
   }
 }
 
 function mapStateToProps(state){
+  console.log(state);
   return {
-    counter: state.counter
+    counter: state.counter1.counter
   }
 }
 
