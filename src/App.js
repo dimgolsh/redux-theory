@@ -3,6 +3,7 @@ import './App.scss'
 import {connect} from 'react-redux';
 import { number } from 'prop-types';
 import Counter from './Counter';
+import { add, sub, addNumber } from './redux/actions/actions';
 
 class App extends Component {
  
@@ -34,9 +35,9 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
 
   return {
-    onAdd: () => dispatch({type: 'ADD'}),
-    onSub: ()=> dispatch({type:'SUB'}),
-    onAddNumber: number => dispatch({type: 'NUM', payload: number})
+    onAdd: () => dispatch(add()),
+    onSub: ()=> dispatch(sub()),
+    onAddNumber: number => dispatch(addNumber(number))
   }
 }
 

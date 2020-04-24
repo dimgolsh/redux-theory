@@ -1,20 +1,22 @@
+import { ADD, SUB, ADD_NUMBER } from "../actions/actionTypes";
+
 const initialState = {
     counter: 200,
   };
   
   export default function counter2(state = initialState, action) {
     switch (action.type) {
-      case "ADD":
+      case ADD:
         return {
           counter: state.counter + 1,
         };
   
-      case "SUB":
+      case SUB:
         return {
           counter: state.counter - 1,
         };
   
-      case "NUM2":
+      case ADD_NUMBER:
         return {
           counter: state.counter + action.payload,
         };
